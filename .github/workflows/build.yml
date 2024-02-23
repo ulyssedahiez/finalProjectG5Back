@@ -2,7 +2,7 @@ name: compile and push on the registry
 
 on:
   push:
-    branches: main
+    branches: develop
 
 jobs:
   build-and-push-docker-image:
@@ -17,4 +17,4 @@ jobs:
       - name: Build and push Docker image
         run: |
           DATE=$(date +"%d%m%Y")
-          docker buildx build --push --tag ghcr.io/${{github.repository_owner }}/back:$DATE --tag ghcr.io/${{github.repository_owner }}/back:latest .
+          docker buildx build --push --tag ghcr.io/${{github.repository_owner }}/final:$DATE --tag ghcr.io/${{github.repository_owner }}/back:latest .
